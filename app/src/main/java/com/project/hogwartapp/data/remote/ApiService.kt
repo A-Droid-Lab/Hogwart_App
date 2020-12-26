@@ -1,7 +1,24 @@
 package com.project.hogwartapp.data.remote
 
+import com.project.hogwartapp.data.local.entity.Characters
+import com.project.hogwartapp.data.local.entity.CharactersItem
+import io.reactivex.Single
+import retrofit2.http.GET
+import retrofit2.http.Path
+
 interface ApiService {
 
+    @GET("characters")
+    fun getAllCharacters(): Single<List<CharactersItem>>
+
+    @GET("characters/students")
+    fun getAllStudents(): Single<Characters>
+
+    @GET("characters/staff")
+    fun getAllStaff(): Single<Characters>
+
+    @GET("characters/house/{hakgwa}")
+    fun getCharactersByHouse(@Path("hakgwa") hakgwa: String): Single<Characters>
 }
 
 

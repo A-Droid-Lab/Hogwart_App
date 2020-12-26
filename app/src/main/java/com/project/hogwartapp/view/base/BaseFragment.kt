@@ -22,6 +22,8 @@ abstract class BaseFragment<VM : ViewModel, DB: ViewDataBinding>: DaggerFragment
 
     abstract fun getViewModel(): Class<VM>
 
+    abstract fun afterViewCreated()
+
     @LayoutRes
     abstract fun getLayoutRes(): Int
 
@@ -32,6 +34,7 @@ abstract class BaseFragment<VM : ViewModel, DB: ViewDataBinding>: DaggerFragment
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         dataBinding = DataBindingUtil.inflate(inflater, getLayoutRes(), container, false)
+        afterViewCreated()
         return dataBinding.root
     }
 }
