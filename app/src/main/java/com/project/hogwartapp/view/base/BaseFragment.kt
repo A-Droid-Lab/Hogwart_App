@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil.bind
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.project.hogwartapp.databinding.ActivityMainBinding.bind
+import com.project.hogwartapp.databinding.FragmentHogwartBinding.bind
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
