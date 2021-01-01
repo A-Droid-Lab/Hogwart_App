@@ -12,6 +12,7 @@
 - Dagger2
 - MVVM Architecture
 - LiveData
+- Lottie Animation (Lightening)
 - Repository Pattern based.
 ![](https://images.velog.io/images/jaeyunn_15/post/c5673c4d-d7e6-4809-98ee-0f09f53b6ee8/image.png)
 
