@@ -107,4 +107,8 @@ dependencies {
 
     // Data Binding
     kapt "com.android.databinding:compiler:$dataBinding"
+
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.0.7'
+
 }
