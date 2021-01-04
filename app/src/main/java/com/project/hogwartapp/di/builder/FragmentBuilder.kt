@@ -1,6 +1,6 @@
 package com.project.hogwartapp.di.builder
 
-import com.project.hogwartapp.view.HogwartFragment
+import com.project.hogwartapp.view.home.HogwartFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

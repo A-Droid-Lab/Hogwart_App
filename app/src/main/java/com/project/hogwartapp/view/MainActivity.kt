@@ -1,11 +1,11 @@
 package com.project.hogwartapp.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.project.hogwartapp.R
 import com.project.hogwartapp.databinding.ActivityMainBinding
 import com.project.hogwartapp.util.transact
 import com.project.hogwartapp.view.base.BaseActivity
+import com.project.hogwartapp.view.home.HogwartFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 

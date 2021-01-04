@@ -1,10 +1,8 @@
-package com.project.hogwartapp.view
+package com.project.hogwartapp.view.viewmodel
 
 import android.util.Log
 import com.project.hogwartapp.repository.HogwartRepository
 import com.project.hogwartapp.view.base.BaseViewModel
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class CharacterViewModel @Inject constructor(private val repo : HogwartRepository) : BaseViewModel(){

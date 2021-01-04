@@ -3,7 +3,7 @@ package com.project.hogwartapp.di.module
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.project.hogwartapp.di.ViewModelKey
-import com.project.hogwartapp.view.CharacterViewModel
+import com.project.hogwartapp.view.viewmodel.CharacterViewModel
 import com.project.hogwartapp.viewmodel.ViewModelFactory
 import dagger.Binds
 import dagger.Module
