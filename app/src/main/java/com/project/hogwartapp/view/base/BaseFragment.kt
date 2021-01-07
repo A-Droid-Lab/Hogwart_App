@@ -8,10 +8,12 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.DataBindingUtil.bind
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.project.hogwartapp.databinding.ActivityMainBinding.bind
 import com.project.hogwartapp.databinding.FragmentHogwartBinding.bind
+import com.project.hogwartapp.view.MainActivity
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
@@ -20,11 +22,13 @@ abstract class BaseFragment<VM : ViewModel, DB: ViewDataBinding>: DaggerFragment
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
+    @Inject
+    lateinit var mainActivity : MainActivity
+
     lateinit var dataBinding: DB
     lateinit var viewModel: VM
 
     abstract fun getViewModel(): Class<VM>
-
     abstract fun beforeViewCreated()
     abstract fun afterViewCreated()
 
@@ -41,5 +45,9 @@ abstract class BaseFragment<VM : ViewModel, DB: ViewDataBinding>: DaggerFragment
         beforeViewCreated()
         afterViewCreated()
         return dataBinding.root
+    }
+
+    fun replaceFragment(fragment:Fragment){
+        mainActivity.replaceFragment(fragment)
     }
 }

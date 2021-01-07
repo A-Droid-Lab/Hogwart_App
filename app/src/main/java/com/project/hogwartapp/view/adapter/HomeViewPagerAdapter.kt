@@ -9,8 +9,14 @@ import com.project.hogwartapp.databinding.ItemHomeBinding
 
 class HomeViewPagerAdapter : RecyclerView.Adapter<HomeViewPagerAdapter.HomeViewPagerViewHolder>(){
 
-    private var houseNameList = arrayListOf<String>("hogwart","grifindor","hufflepuff","ravenclaw","slytherin")
-    private var logoSrclist = arrayListOf<Int>(R.drawable.hogwart,R.drawable.grifindor, R.drawable.hufflepuff, R.drawable.ravenclaw, R.drawable.slytherin)
+    private var houseNameList = arrayListOf("hogwart","Gryffindor","Hufflepuff","Ravenclaw","Slytherin")
+    private var logoSrclist = arrayListOf(R.drawable.hogwart,R.drawable.grifindor, R.drawable.hufflepuff, R.drawable.ravenclaw, R.drawable.slytherin)
+
+    private var listener: ((id: String) -> Unit)? = null
+
+    fun setOnHouseClickListener(listener: (id: String) -> Unit) {
+        this.listener = listener
+    }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -31,6 +37,10 @@ class HomeViewPagerAdapter : RecyclerView.Adapter<HomeViewPagerAdapter.HomeViewP
         fun bind(houseName : String, imgSrc : Int){
             binding.item = houseName
             binding.ivHouseLogo.setImageResource(imgSrc)
+            itemView.setOnClickListener {
+                listener?.invoke(houseName)
+            }
         }
+
     }
 }

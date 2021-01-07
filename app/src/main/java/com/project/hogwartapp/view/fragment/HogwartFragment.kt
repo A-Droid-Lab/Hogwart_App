@@ -1,4 +1,4 @@
-package com.project.hogwartapp.view.home
+package com.project.hogwartapp.view.fragment
 
 import androidx.core.view.ViewCompat
 import androidx.viewpager2.widget.ViewPager2
@@ -21,13 +21,14 @@ class HogwartFragment : BaseFragment<CharacterViewModel, FragmentHogwartBinding>
 
     override fun afterViewCreated() {
         val indicator: CircleIndicator3 = dataBinding.ciHogwart
+        val homeAdapter = HomeViewPagerAdapter()
+
         dataBinding.lottieView.playAnimation()
         dataBinding.vpHogwart.apply {
-            adapter = HomeViewPagerAdapter()
+            adapter = homeAdapter
             offscreenPageLimit = 3
             indicator.setViewPager(dataBinding.vpHogwart)
         }
-
 
         val pageMargin = resources.getDimensionPixelOffset(R.dimen.pageMargin).toFloat()
         val pageOffset = resources.getDimensionPixelOffset(R.dimen.offset).toFloat()
@@ -40,6 +41,10 @@ class HogwartFragment : BaseFragment<CharacterViewModel, FragmentHogwartBinding>
                 page.translationX = myOffset
             }
         })
+
+        homeAdapter.setOnHouseClickListener {
+            replaceFragment(HouseDetailFragment.newInstance())
+        }
     }
 
     companion object {
