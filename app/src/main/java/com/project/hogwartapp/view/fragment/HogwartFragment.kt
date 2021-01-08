@@ -43,7 +43,7 @@ class HogwartFragment : BaseFragment<CharacterViewModel, FragmentHogwartBinding>
         })
 
         homeAdapter.setOnHouseClickListener {
-            replaceFragment(HouseDetailFragment.newInstance())
+            replaceFragment(HouseDetailFragment.newInstance(it))
         }
     }
 

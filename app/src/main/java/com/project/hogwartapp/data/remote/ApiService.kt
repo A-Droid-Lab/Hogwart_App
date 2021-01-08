@@ -17,8 +17,8 @@ interface ApiService {
     @GET("characters/staff")
     fun getAllStaff(): Single<Characters>
 
-    @GET("characters/house/{hakgwa}")
-    fun getCharactersByHouse(@Path("hakgwa") hakgwa: String): Single<Characters>
+    @GET("characters/house/{house}")
+    fun getCharactersByHouse(@Path("house") house: String): Single<List<CharactersItem>>
 }
 
 
