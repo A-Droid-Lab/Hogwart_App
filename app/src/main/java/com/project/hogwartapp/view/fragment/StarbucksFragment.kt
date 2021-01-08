@@ -13,18 +13,6 @@ import com.project.hogwartapp.view.viewmodel.StarbucksViewModel
 
 class StarbucksFragment : BaseFragment<StarbucksViewModel, FragmentStarbucksBinding>() {
 
-
-
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-                StarbucksFragment().apply {
-                    arguments = Bundle().apply {
-
-                    }
-                }
-    }
-
     override fun getViewModel(): Class<StarbucksViewModel> = StarbucksViewModel::class.java
 
     override fun getLayoutRes(): Int = R.layout.fragment_starbucks
@@ -36,5 +24,13 @@ class StarbucksFragment : BaseFragment<StarbucksViewModel, FragmentStarbucksBind
     override fun afterViewCreated() {
     }
 
+    companion object {
+        @JvmStatic
+        fun newInstance() =
+                StarbucksFragment().apply {
+                    arguments = Bundle().apply {
 
+                    }
+                }
+    }
 }

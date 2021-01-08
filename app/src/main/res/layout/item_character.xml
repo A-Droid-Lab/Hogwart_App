@@ -2,13 +2,19 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="item"
+            type="com.project.hogwartapp.data.local.entity.CharactersItem" />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/black">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,14 +22,15 @@
         android:layout_marginEnd="15sp"
         android:layout_marginTop="15sp"
         app:cardCornerRadius="6dp"
+        app:cardBackgroundColor="@color/black"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="220dp"
-                android:layout_height="220dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="15dp"
                 android:layout_marginStart="15dp"
@@ -31,6 +38,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/civ_character"
+                app:loadImage="@{item.image}"
                 />
 
             <TextView
@@ -42,6 +50,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"
                 tools:text="Harry Potter"
+                android:text="@{item.name}"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 />
@@ -55,6 +65,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="5dp"
                 tools:text="Grifindor"
+                android:textColor="@color/white"
+                android:text="@{item.house}"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

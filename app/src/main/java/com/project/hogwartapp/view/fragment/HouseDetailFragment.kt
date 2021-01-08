@@ -3,6 +3,7 @@ package com.project.hogwartapp.view.fragment
 import android.os.Bundle
 import com.project.hogwartapp.R
 import com.project.hogwartapp.databinding.FragmentHouseDetailBinding
+import com.project.hogwartapp.view.adapter.DetailHouseAdapter
 import com.project.hogwartapp.view.base.BaseFragment
 import com.project.hogwartapp.view.viewmodel.CharacterViewModel
 
@@ -23,12 +24,14 @@ class HouseDetailFragment : BaseFragment<CharacterViewModel, FragmentHouseDetail
                 }
             }
         }
-
     }
 
     override fun afterViewCreated() {
-
-
+        val adapter = DetailHouseAdapter()
+        dataBinding.rvDetailHouseFragment.adapter = adapter
+        viewModel.characterData.observe(viewLifecycleOwner){
+            adapter.setItem(it)
+        }
     }
 
     companion object {

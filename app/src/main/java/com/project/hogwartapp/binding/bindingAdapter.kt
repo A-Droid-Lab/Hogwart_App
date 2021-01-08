@@ -1,10 +1,9 @@
-package com.project.hogwartapp.util
+package com.project.hogwartapp.binding
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.project.hogwartapp.R
 
 @BindingAdapter("loadImage")
 fun setImageUrl(view : ImageView, url : String?){
