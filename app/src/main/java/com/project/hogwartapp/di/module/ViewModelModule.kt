@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.project.hogwartapp.di.ViewModelKey
 import com.project.hogwartapp.view.viewmodel.CharacterViewModel
-import com.project.hogwartapp.view.viewmodel.StarbucksViewModel
 import com.project.hogwartapp.viewmodel.ViewModelFactory
 import dagger.Binds
 import dagger.Module
@@ -20,10 +19,5 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(CharacterViewModel::class)
     abstract fun bindsCharacterViewModel(characterViewModel: CharacterViewModel): ViewModel
-
-    @Binds
-    @IntoMap
-    @ViewModelKey(StarbucksViewModel::class)
-    abstract fun bindsStarbucksViewModel(starbucksViewModel: StarbucksViewModel): ViewModel
 
 }

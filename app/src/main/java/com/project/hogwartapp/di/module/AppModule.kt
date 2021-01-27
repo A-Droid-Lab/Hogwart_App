@@ -5,7 +5,6 @@ import androidx.room.Room
 import com.project.hogwartapp.data.local.HogwartDatabase
 import com.project.hogwartapp.data.local.dao.HogwartDao
 import com.project.hogwartapp.data.remote.ApiService
-import com.project.hogwartapp.data.remote.StarbucksApiService
 import com.project.hogwartapp.util.Constants
 import dagger.Module
 import dagger.Provides
@@ -48,19 +47,6 @@ class AppModule {
             .build()
 
         return retrofit.create(ApiService::class.java)
-    }
-
-    @Provides
-    @Singleton
-    fun provideStarbucksApiService(okHttpClient: OkHttpClient): StarbucksApiService {
-        val retrofit = Retrofit.Builder()
-                .baseUrl(Constants.SB_BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .client(okHttpClient)
-                .build()
-
-        return retrofit.create(StarbucksApiService::class.java)
     }
 
     @Provides
